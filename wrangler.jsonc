@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+
+  "name": "mhmd-activation-bot",
+
+  "main": "worker.js",
+
+  "compatibility_date": "2026-06-25",
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "mhmd-db"
+    }
+  ],
+
+  "kv_namespaces": [
+    {
+      "binding": "KV",
+      "id": "9e2e5ff38d0d4a70b224f1e75ade56b5"
+    }
+  ]
+}
