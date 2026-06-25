@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
 
-  "name": "mhmd-activation-bot",
+  "name": "mhmd-activation-bot2",
 
   "main": "worker.js",
 
