@@ -1,60 +1,37 @@
-// ================================
-// MHMD Activation Bot Configuration
-// ================================
+// config.js
+// إعدادات المشروع - يتم جلب القيم الحساسة من Secrets
 
-export const CONFIG = {
+export default {
+  // يتم جلبها من environment variables (Secrets)
+  get BOT_TOKEN() {
+    return globalThis.BOT_TOKEN_SECRET;
+  },
+  get ADMIN_BOT_TOKEN() {
+    return globalThis.ADMIN_BOT_TOKEN_SECRET;
+  },
+  get ADMIN_ID() {
+    return globalThis.ADMIN_ID_SECRET;
+  },
+  get GRIZZLY_API_KEY() {
+    return globalThis.GRIZZLY_API_KEY_SECRET;
+  },
 
-  // اسم المشروع
-  PROJECT_NAME: "MHMD Activation Bot",
+  // إعدادات المزود
+  GRIZZLY_BASE_URL: 'https://api.grizzlysms.com/stubs/handler_api.php',
 
-  // لغة البوت
-  DEFAULT_LANGUAGE: "ar",
+  // إعدادات هامش الربح الافتراضية
+  DEFAULT_PROFIT_TIERS: [
+    { min: 0, max: 1.5, add: 0.5 },
+    { min: 1.5, max: 3, add: 1 },
+    { min: 3, max: 6, add: 1.5 },
+    { min: 6, max: 10, add: 2 },
+  ],
 
-  // العملة
-  CURRENCY: "USD",
+  // حدود الوقت
+  ACTIVATION_TIMEOUT_MINUTES: 20,
+  CANCEL_COOLDOWN_MINUTES: 3,
 
-  // مدة انتظار وصول الكود (20 دقيقة)
-  SMS_TIMEOUT: 20 * 60,
-
-  // السماح بإلغاء الطلب بعد 3 دقائق
-  CANCEL_AFTER: 3 * 60,
-
-  // أقل مبلغ شحن
-  MIN_DEPOSIT: 3,
-
-  // عدد الطلبات في الصفحة
-  PAGE_SIZE: 10,
-
-  // وضع الصيانة
-  MAINTENANCE: false,
-
-  // هامش الربح
-  PROFIT: {
-    LEVEL1: {
-      min: 0,
-      max: 1.5,
-      profit: 0.5
-    },
-    LEVEL2: {
-      min: 1.5,
-      max: 3,
-      profit: 1
-    },
-    LEVEL3: {
-      min: 3,
-      max: 6,
-      profit: 1.5
-    },
-    LEVEL4: {
-      min: 6,
-      max: 10,
-      profit: 2
-    },
-    LEVEL5: {
-      min: 10,
-      max: 99999,
-      profit: 3
-    }
-  }
-
+  // Webhook paths
+  CUSTOMER_WEBHOOK_PATH: '/customer',
+  ADMIN_WEBHOOK_PATH: '/admin',
 };
