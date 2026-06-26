@@ -1,11 +1,12 @@
 {
   "name": "mhmd-activation-bot",
   "version": "1.0.0",
-  "private": true,
+  "description": "Telegram bot for selling activation numbers via GrizzlySMS API",
+  "main": "worker.js",
   "scripts": {
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
   },
-  "devDependencies": {
-    "wrangler": "^4.24.3"
-  }
+  "author": "MHMD",
+  "license": "MIT"
 }
